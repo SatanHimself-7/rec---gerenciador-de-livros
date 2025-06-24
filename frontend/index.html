@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerenciador de Livros</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>📚 Gerenciador de Livros</h1>
+
+        <!-- Adicionar Livro -->
+        <section class="section">
+            <h2>Adicionar Novo Livro</h2>
+            <form id="addBookForm">
+                <input type="text" id="addTitulo" placeholder="Título" required />
+                <input type="text" id="addAutor" placeholder="Autor" required />
+                <input type="number" id="addAnoPublicacao" placeholder="Ano de Publicação" required />
+                <input type="text" id="addGenero" placeholder="Gênero" required />
+                <input type="number" id="addNumeroPaginas" placeholder="Número de Páginas" required />
+                <textarea id="addSinopse" placeholder="Sinopse (opcional)"></textarea>
+                <input type="text" id="addIsbn" placeholder="ISBN" required />
+                <button type="submit">Adicionar Livro</button>
+            </form>
+            <p id="addMessage" class="message"></p>
+        </section>
+
+        <!-- Consultar Livros -->
+        <section class="section">
+            <h2>Consultar Livros</h2>
+            <div class="query-controls">
+                <button id="getAllBooks">📖 Listar Todos</button>
+
+                <input type="text" id="queryAutor" placeholder="Filtrar por Autor" />
+                <button id="getBooksByAuthor">Buscar</button>
+
+                <input type="text" id="queryGenero" placeholder="Filtrar por Gênero" />
+                <button id="getBooksByGenre">Buscar</button>
+
+                <input type="number" id="queryAno" placeholder="Filtrar por Ano" />
+                <button id="getBooksByYear">Buscar</button>
+
+                <button id="getMostPages">🔝 10 com Mais Páginas</button>
+                <button id="getLeastPages">🔽 10 com Menos Páginas</button>
+
+                <input type="text" id="queryIsbn" placeholder="Buscar por ISBN" />
+                <button id="getBookByIsbn">Buscar ISBN</button>
+            </div>
+            <p id="queryMessage" class="message"></p>
+            <div id="booksList" class="books-list"></div>
+        </section>
+
+        <!-- Atualizar Livro -->
+        <section class="section">
+            <h2>Atualizar Livro</h2>
+            <form id="updateBookForm">
+                <input type="text" id="updateIsbn" placeholder="ISBN do Livro" required />
+                <input type="text" id="updateTitulo" placeholder="Novo Título (opcional)" />
+                <input type="text" id="updateAutor" placeholder="Novo Autor (opcional)" />
+                <input type="number" id="updateAnoPublicacao" placeholder="Novo Ano (opcional)" />
+                <input type="text" id="updateGenero" placeholder="Novo Gênero (opcional)" />
+                <input type="number" id="updateNumeroPaginas" placeholder="Novo Nº de Páginas (opcional)" />
+                <textarea id="updateSinopse" placeholder="Nova Sinopse (opcional)"></textarea>
+                <button type="submit">Atualizar Livro</button>
+            </form>
+            <p id="updateMessage" class="message"></p>
+        </section>
+
+        <!-- Deletar Livro -->
+        <section class="section">
+            <h2>Deletar Livro</h2>
+            <form id="deleteBookForm">
+                <input type="text" id="deleteIsbn" placeholder="ISBN do Livro" required />
+                <button type="submit">🗑️ Deletar Livro</button>
+            </form>
+            <p id="deleteMessage" class="message"></p>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
